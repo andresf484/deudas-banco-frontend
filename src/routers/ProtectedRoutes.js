@@ -25,7 +25,7 @@ export const ProtectedRoutes = () => {
             <Route path='/deudas/detalle/:id' element={<DetalleDeuda />} />
 
             <Route path='/' element={<Dashboard />} />
-            {/*<Route path='*' element={<Navigate replace to="/" />} />*/}
+            <Route path='*' element={<Navigate replace to="/" />} />
         </Routes>
     </BrowserRouter>
     )

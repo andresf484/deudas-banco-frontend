@@ -17,7 +17,7 @@ export const PublicRoutes = () => {
             <Route path='/login' element={<Login />} />
 
             <Route path='/' element={<Index />} />
-            {/*<Route path='*' element={<Navigate replace to="/"/>} />*/}
+            <Route path='*' element={<Navigate replace to="/"/>} />
         </Routes>
     </BrowserRouter>
     )

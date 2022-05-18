@@ -78,6 +78,12 @@ const DeudasBanco = () => {
 
         }, []);
 
+        const handleButton = value => (e) => {
+            e.preventDefault();
+            //console.log(value);
+            navigate('/deudas/detalle/'+value);
+        }
+
     return(
 
         <div>
@@ -110,7 +116,7 @@ const DeudasBanco = () => {
                             <td>{e.deuda_total}</td>
                             <td>{e.deuda_pendiente}</td>
                             <td>
-                                <Button variant="primary" href={'/deudas/detalle/'+e._id}> Detalle de esta deuda</Button>
+                                <Button variant="primary" onClick={handleButton(e._id)} /*href={'/deudas/detalle/'+e._id}*/> Detalle de esta deuda</Button>
                             </td>
                         </tr>
                     )

@@ -71,6 +71,12 @@ const ListaBancos = () => {
 
     }, [])
 
+    const handleButton = value => (e) => {
+        e.preventDefault();
+        //console.log(value);
+        navigate('/deudas/'+value);
+    }
+
     return (
 
     <Container fluid="md">
@@ -97,7 +103,7 @@ const ListaBancos = () => {
                         <td>{e.banco_slug}</td>
                         <td>
 
-                        <Button variant="primary" href={'/deudas/'+e.banco_slug}> Deudas con este banco</Button>
+                        <Button variant="primary" onClick={handleButton(e.banco_slug)} /* href={'/deudas/'+e.banco_slug} */> Deudas con este banco</Button>
 
                         </td>
                     </tr>
