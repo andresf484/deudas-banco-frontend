@@ -6,13 +6,21 @@ const Index = () => {
 
     const navigate = useNavigate();
 
-    return <div>Página inicial (Bienvenida)
+    return( 
+    
+        <Container>
 
-            <Button variant="primary" type="submit" onClick={ () => { navigate('/login') }}>
-                    Login
-            </Button>
+            <div>Página inicial (Bienvenida)
 
-    </div>;
+                <Button variant="primary" type="submit" onClick={ () => { navigate('/login') }}>
+                        Login
+                </Button>
+
+            </div>
+        
+        </Container>
+    
+    );
 };
 
 export default Index;

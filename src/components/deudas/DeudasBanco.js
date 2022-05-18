@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState }  from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Container, Table, Button } from 'react-bootstrap';
+import { Breadcrumb, Container, Table, Button } from 'react-bootstrap';
 
 import { server } from '../../context/Api';
 import AuthContext from "../../context/AuthContext";
@@ -88,11 +88,19 @@ const DeudasBanco = () => {
 
         <div>
 
-            <h2>Deudas con el banco: {params.slug}</h2>    
-
-            <br />
-
             <Container fluid="md">
+
+                <Breadcrumb>
+                    <Breadcrumb.Item onClick={ () => { navigate('/') }}>Inicio</Breadcrumb.Item>
+                    <Breadcrumb.Item onClick={ () => { navigate('/bancos') }}>
+                        Lista bancos
+                    </Breadcrumb.Item>
+                    <Breadcrumb.Item active>Deudas banco: {params.slug}</Breadcrumb.Item>
+                </Breadcrumb>
+
+                <h2>Deudas con el banco: {params.slug}</h2>
+
+                <br />
 
                 <Table striped bordered hover>
                 <thead>

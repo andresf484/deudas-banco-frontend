@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import { Container, Table, Button, } from 'react-bootstrap';
+import { Breadcrumb, Container, Table, Button, } from 'react-bootstrap';
 
 /**********************Importacion de Componentes**************************/
 import { server } from '../../context/Api';
@@ -80,6 +80,15 @@ const ListaBancos = () => {
     return (
 
     <Container fluid="md">
+
+        <Breadcrumb>
+            <Breadcrumb.Item onClick={ () => { navigate('/') }}>Inicio</Breadcrumb.Item>
+            <Breadcrumb.Item active>Lista bancos</Breadcrumb.Item>
+        </Breadcrumb>
+
+        <h2>Lista de bancos</h2>
+
+        <br />
 
         <Table striped bordered hover>
         <thead>

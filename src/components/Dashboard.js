@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Row, Container, Form, Button } from 'react-bootstrap';
+import { Breadcrumb, Container, Button } from 'react-bootstrap';
 
 const Dashboard = () => {
 
@@ -8,14 +8,26 @@ const Dashboard = () => {
 
     return(
     
-        <div>Dashboard (Autenticado)
-
-        <Button variant="primary" type="submit" onClick={ () => { navigate('/logout') }}>
-            Logout
-        </Button>
-
-    </div>
+        <div>
     
+            <Container>
+
+                <Breadcrumb active>
+                    <Breadcrumb.Item href="#">Inicio</Breadcrumb.Item>
+                </Breadcrumb>
+
+                <h2>Dashboard (Autenticado)</h2>
+
+                <br />
+
+                <Button variant="primary" type="submit" onClick={ () => { navigate('/logout') }}>
+                    Logout
+                </Button>
+
+            </Container>
+
+        </div>
+
     );
 };
 

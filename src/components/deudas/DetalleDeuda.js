@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useNavigate, useParams } from 'react-router-dom';
-import { Row, Col, Container, Table, Form, Button } from 'react-bootstrap';
+import { Row, Col, Breadcrumb, Container, Table, Form, Button } from 'react-bootstrap';
 
 /**********************Importacion de Componentes**************************/
 import { server } from '../../context/Api';
@@ -208,7 +208,20 @@ const DetalleDeuda = () => {
 
         <Container fluid="md">
 
-            <h2>Detalle de la deuda ( _id ): {params.id} - Banco: {detalleDeuda.banco_slug} </h2>
+            <Breadcrumb>
+                <Breadcrumb.Item onClick={ () => { navigate('/') }}>Inicio</Breadcrumb.Item>
+                <Breadcrumb.Item onClick={ () => { navigate('/bancos') }}>
+                    Lista bancos
+                </Breadcrumb.Item>
+                <Breadcrumb.Item onClick={ () => { navigate('/deudas/'+detalleDeuda.banco_slug) }}>
+                    Deudas banco: {detalleDeuda.banco_slug}
+                </Breadcrumb.Item>
+                <Breadcrumb.Item active>Detalle deuda (_id): {params.id}</Breadcrumb.Item>
+            </Breadcrumb>
+
+            <h2>Detalle deuda (_id): {params.id} - Banco: {detalleDeuda.banco_slug} </h2>
+
+            <br />
 
             <Table striped bordered hover>
 
@@ -279,7 +292,7 @@ const DetalleDeuda = () => {
                                 disabled
                             />
                             <Form.Text className="text-muted">
-                            Solo números enteros
+                                Dato calculado automáticamente
                             </Form.Text>
                         </Form.Group>
 
